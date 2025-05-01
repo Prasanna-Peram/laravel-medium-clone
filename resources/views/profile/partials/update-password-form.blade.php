@@ -13,6 +13,13 @@
         @csrf
         @method('put')
 
+         <!-- Image -->
+         <div>
+            <x-input-label for="image" :value="__('Image')" />
+            <x-text-input id="image" class="block mt-1 w-full" type="file" name="image"
+                :value="old('image')" autofocus />
+            <x-input-error :messages="$errors->get('image')" class="mt-2" />
+        </div>
         <div>
             <x-input-label for="update_password_current_password" :value="__('Current Password')" />
             <x-text-input id="update_password_current_password" name="current_password" type="password" class="mt-1 block w-full" autocomplete="current-password" />
